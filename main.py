@@ -1,6 +1,9 @@
-def main():
-    print("Hello from linked-bot!")
+import asyncio
+
+
+async def main():
+    ...
 
 
 if __name__ == "__main__":
-    main()
+    asyncio.run(main())
