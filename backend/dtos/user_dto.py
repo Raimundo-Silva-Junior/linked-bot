@@ -1,6 +1,9 @@
+from uuid import UUID
 from pydantic import BaseModel
 
 class UserDto(BaseModel):
-    email: str
+    
+    id: UUID
+    username: str
     password: str
     cookies: str

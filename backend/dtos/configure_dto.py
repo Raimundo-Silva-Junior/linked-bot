@@ -1,5 +1,7 @@
+from uuid import UUID
 from pydantic import BaseModel
 
 class ConfigureDto(BaseModel):
-    url: str
+    
+    id: UUID
     headless: bool
