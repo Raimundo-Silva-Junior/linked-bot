@@ -1,7 +1,7 @@
 from uuid import UUID
 from pydantic import BaseModel
 
-class ConfigureDto(BaseModel):
+class ConfigureDTO(BaseModel):
     
     id: UUID
     headless: bool

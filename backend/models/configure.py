@@ -1,12 +1,12 @@
 from sqlalchemy import Column, String, UUID, ForeignKey
 from sqlalchemy.orm import relationship
-from backend.models.base import BaseModel
+from backend.models.base import Base
 
-class Configure(BaseModel):
+class Configure(Base):
     __tablename__ = "configures"
     
     id = Column(UUID, primary_key=True, index=True)
     headless = Column(String)
     
-    user_id = Column(UUID, ForeignKey('users.id', index=True))
-    user = relationship('User', backref='configures')
+    user_id = Column(UUID, ForeignKey('users.id', index=True), unique=True)
+    user = relationship('User', back_populates='configure')

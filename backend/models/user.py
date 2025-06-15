@@ -1,8 +1,8 @@
 from sqlalchemy import Column, String, UUID
 from sqlalchemy.orm import relationship
-from backend.models.base import BaseModel
+from backend.models.base import Base
 
-class User(BaseModel):
+class User(Base):
     __tablename__ = "users"
 
     id = Column(UUID, primary_key=True, index=True)
@@ -10,5 +10,5 @@ class User(BaseModel):
     password = Column(String)
     cookies = Column(String)
     
-    configures = relationship('Configure', backref='user')
-    friends = relationship('Friend', backref='user')
+    configure = relationship('Configure', back_populates='user', uselist=False)
+    friends = relationship('Friend', back_populates='user')

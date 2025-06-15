@@ -1,7 +1,7 @@
 from uuid import UUID
 from pydantic import BaseModel
 
-class UserDto(BaseModel):
+class UserDTO(BaseModel):
     
     id: UUID
     username: str
