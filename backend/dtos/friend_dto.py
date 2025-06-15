@@ -1,11 +1,13 @@
 from pydantic import BaseModel
 from uuid import UUID
 from backend.dtos.message_dto import MessageDTO
+from datetime import datetime
 
 class FriendDTO(BaseModel):
     
     id: UUID
     name: str
+    friendship_date: datetime
     messages: list[MessageDTO]
     
     @property

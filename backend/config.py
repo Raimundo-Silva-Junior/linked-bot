@@ -1,5 +1,5 @@
 from typing import Final
-from sqlalchemy import create_engine, Engine
+from sqlalchemy import Engine
 from sqlalchemy.orm import sessionmaker
 
 BASE_URL: Final = 'https://www.linkedin.com'
