@@ -2,7 +2,6 @@ from playwright.async_api import async_playwright
 from typing import Callable
 from functools import wraps
 
-
 def driver(func: Callable) -> Callable:
     
     @wraps(func)

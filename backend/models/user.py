@@ -5,7 +5,7 @@ from backend.models.base import Base
 class User(Base):
     __tablename__ = "users"
 
-    id = Column(UUID, primary_key=True, index=True)
+    id = Column(UUID, primary_key=True)
     username = Column(String, unique=True)
     password = Column(String)
     cookies = Column(String)

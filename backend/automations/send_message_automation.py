@@ -1,18 +1,10 @@
-from playwright.async_api import Page
-from backend.utils.goto import goto
+from backend.automations.base_automation import BaseAutomation
 
 
-class SendMessageAutomation:
+class SendMessageAutomation(BaseAutomation):
     
-    def __init__(self, page: Page, url: str):
-        self.page = page
-        self.url = url
-    
-    async def enter_page(self):
-        await goto(self.page, self.url)
-    
-    async def find_friend(self, name: str):
-        self.page.locator('text="name"')
+    async def find_friend(self, name: str) -> None:
+        await self.page.locator("#mn-connections-search-input").fill(name)
         
     async def send_message(self, message: str):
-        self.page.locator('text="name"')
+        await self.page.locator("//button[@class='artdeco-pill__text']", has_text="Enviar").click()
