@@ -1,7 +1,7 @@
 from pydantic import BaseModel
-from uuid import uuid4, UUID
+from uuid import UUID
 
-class FriendDto(BaseModel):
+class FriendDTO(BaseModel):
     
     id: UUID
     name: str

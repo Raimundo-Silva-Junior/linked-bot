@@ -9,4 +9,4 @@ class FriendRepository:
 
     def find_friends(self, user_id: str):
         query = text("SELECT * FROM friends WHERE user_id = :user_id")
-        return self.ession.execute(query, {"user_id": user_id})
+        return self.session.execute(query, {"user_id": user_id})
